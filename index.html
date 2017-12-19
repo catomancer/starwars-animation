@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- FOR GITHUB PAGES -->
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="howto.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jstween-1.1.min.js"></script>
+	<script src="howto.js"></script>
+	<title>Use the Force: JSTween</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>Use the Force!</h1>
+			<h3>Animation with JSTween</h3>
+		</div>
+		<div id="navigation">
+			<div class="button"><a href="howto.html">Home</a></div>
+			<div class="button"><a href="formatting.html">Step 1: Format</a></div>
+			<div class="button"><a href="js-links.html">Step 2: Set Up Libraries</a></div>
+			<div class="button"><a href="animate.html">Step 3: Animate</a></div>
+			<div class="button"><a href="sequence.html">Step 4: Sequence</a></div>
+			<div class="button"><a href="effects.html">Step 5: Effects</a></div>
+			<div class="button"><a href="aggregate.html">Step 6: The Finished Product</a></div>
+		</div>
+		<div id="main">
+			<h2>How to Animate a Force Battle</h2>
+			<p>JSTween is a jQuery library that makes it easy to create animations for the web!  To learn how
+			to create the Force Battle shown below, go to <a href="formatting.html">Step 1</a>.</p>
+			<p>To view the Force Battle animation, simply click "Start Battle!" below.  Click "Reset" to
+			return the animation to its original state.</p>
+			<hr>
+			<div id="button-wrapper">
+				<div class="button" id="start" onclick="startBattle()"><a href="#">Start Battle!</a></div>
+				<div class="button" id="reset" onclick="resetBattle()"><a href="#">Reset</a></div>
+			</div>
+			<!-- FINISHED PRODUCT -->
+			<div id="finished">
+				<div id="luke"></div>
+				<div id="vader"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
