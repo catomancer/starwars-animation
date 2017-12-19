@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="instructions.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jstween-1.1.min.js"></script>
+	<script src="animate.js"></script>
+	<title>Use the Force: JSTween</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>Use the Force!</h1>
+			<h3>Animation with JSTween</h3>
+		</div>
+		<div id="navigation">
+			<div class="button"><a href="howto.html">Home</a></div>
+			<div class="button"><a href="formatting.html">Step 1: Format</a></div>
+			<div class="button"><a href="js-links.html">Step 2: Set Up Libraries</a></div>
+			<div class="button"><a href="animate.html">Step 3: Animate</a></div>
+			<div class="button"><a href="sequence.html">Step 4: Sequence</a></div>
+			<div class="button"><a href="effects.html">Step 5: Effects</a></div>
+			<div class="button"><a href="aggregate.html">Step 6: The Finished Product</a></div>
+		</div>
+		<div id="main">
+			<h2>Step 4: Sequence</h2>
+		<p>When you want more than one effect to take place in an animation, you need to coordinate timing and duration.
+		  JSTween does this with the appropriately named <span class="code">time</span> and <span class="code">duration</span> attributes.</p>
+		  
+		  <p>The <span class="code">time</span> attribute specifies at how many seconds into the sequence you want the effect to begin.
+		    For example, we have been using <span class="code">time: 0</span> in the previous examples, and all the animations start as 
+			soon as you click the "Test Code" button.  However, if you wanted an animation to delay or happen later in the sequence,
+			 you simply specify a later time such as <span class="code">time: 3</span>.</p>
+			 
+			 <div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">Delay Start:</h3>
+						<div class="button" onclick="delay()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>left: {
+									<ul>
+									<li>start: 0,</li>
+									<li>stop: 175,</li>
+									<li>time: 3,</li>
+									<li>units: 'px',</li>
+									<li>duration: 1,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-delay"></div>
+				</div>
+			</div>
+			
+			<p>In this case, when you click "Test Code", nothing happens for three seconds.  On its own, this wouldn't be the best feature
+			 to use, since users may think the website isn't working properly.  However, if you want to sequence actions so that one 
+			 animation can happen after another, it is a useful tool.</p>
+		  
+		  <p>The <span class="code">duration</span> attributes specifies how long a particular animation will take.  Until now, we have 
+		  been using <span class="code">duration: 1</span>, and all our examples have taken one second to complete.  However, to make your
+		 animations feel more lifelike, it is often useful to change their duration.  For example, specifying <span class="code">duration: 3</span>
+		  makes Luke take a lot longer to move.</p>
+		  
+		  <div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">Slow Move:</h3>
+						<div class="button" onclick="slow()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>left: {
+									<ul>
+									<li>start: 0,</li>
+									<li>stop: 175,</li>
+									<li>time: 0,</li>
+									<li>units: 'px',</li>
+									<li>duration: 3,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-slow"></div>
+				</div>
+			</div>
+		  
+		<p>Animations can be piled on top of each other by specifying the same <span class="code">time</span> for each one.  For example, if I wanted Luke 
+		to jump through the air while spinning, I would combine <span class="code">move</span> and <span class="code">rotate</span> as shown below.</p>
+		
+		<div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">Jump and Spin:</h3>
+						<div class="button" onclick="jumpAndSpin()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>left: {
+									<ul>
+									<li>start: 0,</li>
+									<li>stop: 200,</li>
+									<li>time: 0,</li>
+									<li>units: 'px',</li>
+									<li>duration: 1,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>},</li>
+								<li>rotate: {
+									<ul>
+									<li>start: 0,</li>
+									<li>stop: 360,</li>
+									<li>units: 'degrees'</li>
+									<li>time: 0,</li>
+									<li>duration: 1,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-jump-spin"></div>
+				</div>
+			</div>
+			
+			<p>The rotation is performed around the middle of the object, which is why it appears like Luke is jumping even though we only
+			 told him to move horizontally using <span class="code">left</span>.  Notice that each directive is separated by a comma.  You 
+			 can chain as many of these together as you like.  Since we wanted Luke to both move and spin at the same time, we kept both 
+			 <span class="code">time</span> attributes set at 0.  However, this does not always have to be the case.</p>
+			 
+			 <p>If I want one effect to happen <span style="font-style:italic;">after</span> another, I simply specify two different
+			  <span class="code">time</span>s for the animations to occur.  The following example has two <span class="code">shadow</span>
+			   effects happen within one second of each other.</p>
+			
+		<div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">Glow and Fade:</h3>
+						<div class="button" onclick="glowAndFade()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>shadow: {
+									<ul>
+									<li>start: '0px 0px 0px #000',</li>
+									<li>stop: '10px 10px 30px #00f',</li>
+									<li>time: 0,</li>
+									<li>duration: 1,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>},</li>
+								<li>shadow: {
+									<ul>
+									<li>start: '10px 10px 30px #00f',</li>
+									<li>stop: '0px 0px 0px #000',</li>
+									<li>time: 1,</li>
+									<li>duration: 1,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-glow-fade"></div>
+				</div>
+			</div>	
+
+			<p>The <span class="code">shadow</span> attribute can be used to both fade in and fade out.  In this case, we accomplished both by fading the 
+			shadow in at <span class="code">time: 0</span>, and fading the shadow out at <span class="code">time: 1</span>.  Time and duration are measured in seconds,
+			 and decimal values such as 0.5 are accepted as well.</p>
+			 
+			 <p>Timing is one of the most critical parts of animation, so it may take a lot of experimentation before you get a sequence that feels "natural".  I noticed
+			  that making my shadow effects faster than my motion effects (<span class="code">duration: 0.5</span> and <span class="code">duration: 1</span>, respectively) resulted
+			   in more realistic animation.  This helpful <a href="http://www.animationmentor.com/webinar/timing-and-spacing-webinar/">webinar from Pixar Animation Studios</a> can help you learn the basics of timing and spacing.</p>
+			   
+			   <p>Once you think you have a good grasp of how to chain animations together, move on to <a href="effects.html">Step 5</a>.</p>
+			
+		<div id="bottom-nav">
+			<div class="button" id="prev"><a href="animate.html">Previous Step: Animate</a></div>
+			<div class="button" id="next"><a href="effects.html">Next Step: Effects</a></div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>

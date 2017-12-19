@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="instructions.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jstween-1.1.min.js"></script>
+	<script src="howto.js"></script>
+	<title>Use the Force: JSTween</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>Use the Force!</h1>
+			<h3>Animation with JSTween</h3>
+		</div>
+		<div id="navigation">
+			<div class="button"><a href="howto.html">Home</a></div>
+			<div class="button"><a href="formatting.html">Step 1: Format</a></div>
+			<div class="button"><a href="js-links.html">Step 2: Set Up Libraries</a></div>
+			<div class="button"><a href="animate.html">Step 3: Animate</a></div>
+			<div class="button"><a href="sequence.html">Step 4: Sequence</a></div>
+			<div class="button"><a href="effects.html">Step 5: Effects</a></div>
+			<div class="button"><a href="aggregate.html">Step 6: The Finished Product</a></div>
+		</div>
+		<div id="main">
+			<h2>Step 6: The Finished Product</h2>
+			<p>Now you're all ready to battle!  I chose to implement my animation using JavaScript functions, both of which
+			 are listed in the scrolling code box below.  I created two DIVs to act as "start" and "reset" buttons, and the 
+			 corresponding function starts execution when the button is clicked.  For example, my "start" button HTML looks like this:</p>
+			 
+			 <p class="code">&lt;div class="button" id="start" onclick="startBattle"&gt;Start Battle!&lt;/div&gt;</p>
+			
+			<div class="final-code">
+				<div class="final-header">
+					<h3 class="title">Final Battle:</h3>
+					<div class="button" onclick="startBattle()">Test Code</div>
+					<div class="button" onclick="resetBattle()">Reset!</div>
+				</div>
+				<div class="code" id="final">
+				function startBattle() {<br/>
+				<span class="red">/* Move */</span>
+				<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>left: {
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 175,</li>
+						<li>time: 0,</li>
+						<li>units: 'px',</li>
+						<li>duration: 1,</li>
+						<li>effect: 'bounceOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+				<ul>
+				<li>$('#vader').tween({
+					<ul>
+					<li>right: {
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 150,</li>
+						<li>time: 0,</li>
+						<li>units: 'px',</li>
+						<li>duration: 1,</li>
+						<li>effect: 'bounceOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+	<span class="red">/* Blue Force Powers */</span>
+				<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '0px 0px 0px #000',</li>
+						<li>stop: '10px 10px 30px #00f',</li>
+						<li>time: 0,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 20,</li>
+						<li>time: 0,</li>
+						<li>duration: 0.5,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+
+				<ul>
+				<li>$('#vader').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '0px 0px 0px #000',</li>
+						<li>stop: '10px 10px 30px #00f',</li>
+						<li>time: 0,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 20,</li>
+						<li>time: 0,</li>
+						<li>duration: 0.5,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<span class="red">/* rotate */</span><br/>
+					<li>rotate:{
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 360,</li>
+						<li>units: 'degrees',</li>
+						<li>time: 1,</li>
+						<li>duration: 1,</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+				
+	<span class="red">/* Blue Force Go Away */</span>
+				<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '10px 10px 30px #00f',</li>
+						<li>stop: '0px 0px 0px #000',</li>
+						<li>time: 1,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 20,</li>
+						<li>stop: 0,</li>
+						<li>time: 1,</li>
+						<li>duration: 0.5,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+
+				<ul>
+				<li>$('#vader').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '10px 10px 30px #00f',</li>
+						<li>stop: '0px 0px 0px #000',</li>
+						<li>time: 1,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 20,</li>
+						<li>stop: 0,</li>
+						<li>time: 1,</li>
+						<li>duration: 0.5,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+			
+			<span class="red">/* Vader Push Luke */</span>
+			<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>left: {
+						<ul>
+						<li>start: 175,</li>
+						<li>stop: 0,</li>
+						<li>time: 2,</li>
+						<li>units: 'px',</li>
+						<li>duration: 1,</li>
+						<li>effect: 'bounceOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+	
+		<span class="red">/* Luke Jump Back Blue Force */</span>
+				<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '0px 0px 0px #000',</li>
+						<li>stop: '10px 10px 30px #00f',</li>
+						<li>time: 2,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<span class="red">/* rotate */</span><br/>
+					<li>rotate:{
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: -360,</li>
+						<li>units: 'degrees',</li>
+						<li>time: 2,</li>
+						<li>duration: 1,</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 20,</li>
+						<li>time: 2,</li>
+						<li>duration: 1,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+	
+		<span class="red">/* Blue Force Go Away */</span>
+				<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '10px 10px 30px #00f',</li>
+						<li>stop: '0px 0px 0px #000',</li>
+						<li>time: 3,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 20,</li>
+						<li>stop: 0,</li>
+						<li>time: 3,</li>
+						<li>duration: 0.5,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+		
+			<span class="red">/* Luke and Vader attack */</span>
+				<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>left: {
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 100,</li>
+						<li>time: 3,</li>
+						<li>units: 'px',</li>
+						<li>duration: 1,</li>
+						<li>effect: 'bounceOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+				<ul>
+				<li>$('#vader').tween({
+					<ul>
+					<li>right: {
+						<ul>
+						<li>start: 150,</li>
+						<li>stop: 200,</li>
+						<li>time: 3,</li>
+						<li>units: 'px',</li>
+						<li>duration: 1,</li>
+						<li>effect: 'bounceOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+			
+			<span class="red">/* Blue Force Powers */</span>
+			<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '0px 0px 0px #000',</li>
+						<li>stop: '10px 10px 30px #00f',</li>
+						<li>time: 3,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 20,</li>
+						<li>time: 3,</li>
+						<li>duration: 0.5,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+				
+				<ul>
+				<li>$('#vader').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '0px 0px 0px #000',</li>
+						<li>stop: '10px 10px 30px #00f',</li>
+						<li>time: 4,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 20,</li>
+						<li>time: 4,</li>
+						<li>duration: 0.5,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+	
+			<span class="red">/* Luke Blue Force Go Away */</span>
+			<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '10px 10px 30px #00f',</li>
+						<li>stop: '0px 0px 0px #000'</li>
+						<li>time: 4,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 20,</li>
+						<li>stop: 0,</li>
+						<li>time: 4,</li>
+						<li>duration: 0.5,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+	  	
+			<span class="red">/* Vader Pushed Back */</span>
+				<ul>
+				<li>$('#vader').tween({
+					<ul>
+					<li>right: {
+						<ul>
+						<li>start: 200,</li>
+						<li>stop: 0,</li>
+						<li>time: 4,</li>
+						<li>units: 'px',</li>
+						<li>duration: 1,</li>
+						<li>effect: 'elasticOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>	  
+
+			<span class="red">/* Vader Blue Force Go Away */</span>
+						<ul>
+				<li>$('#vader').tween({
+					<ul>
+					<li>shadow: {
+						<ul>
+						<li>start: '10px 10px 30px #00f',</li>
+						<li>stop: '0px 0px 0px #000'</li>
+						<li>time: 5,</li>
+						<li>duration: 0.5,</li>
+						<li>effect: 'bounceInOut'</li>
+						</ul>
+					</li>
+					<li>},</li>
+					<li>borderRadius:{
+						<ul>
+						<li>start: 20,</li>
+						<li>stop: 0,</li>
+						<li>time: 5,</li>
+						<li>duration: 0.5,</li>
+						<li>units: 'px',</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>
+		
+		<span class="red">/* Fade Out */</span>
+				<ul>
+				<li>$('#finished').tween({
+					<ul>
+					<li>opacity: {
+						<ul>
+						<li>start: 100,</li>
+						<li>stop: 0,</li>
+						<li>time: 5,</li>
+						<li>duration: 1,</li>
+						<li>effect: 'easeInOut'</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>			
+	  <span class="red">/* play animation */</span>
+		<ul>
+		<li>$.play();</li>
+		</ul>
+};<br/><br/>
+
+function resetBattle() {<br/>
+
+	<span class="red">/* reset Luke position */</span>
+				<ul>
+				<li>$('#luke').tween({
+					<ul>
+					<li>left: {
+						<ul>
+						<li>stop: 0,</li>
+						<li>time: 0,</li>
+						<li>units: 'px',</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>		
+
+	<span class="red">/* reset Vader position */</span>
+				<ul>
+				<li>$('#vader').tween({
+					<ul>
+					<li>right: {
+						<ul>
+						<li>stop: 0,</li>
+						<li>time: 0,</li>
+						<li>units: 'px',</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>		
+
+	<span class="red">/* reset background visibility */</span>
+				<ul>
+				<li>$('#finished').tween({
+					<ul>
+					<li>opacity: {
+						<ul>
+						<li>start: 0,</li>
+						<li>stop: 100,</li>
+						<li>time: 0,</li>
+						</ul>
+					</li>
+					<li>}</li>
+					</ul>
+				</li>
+				<li>});</li>
+				</ul>	
+
+	  <span class="red">/* play animation */</span>
+	  <ul>
+	  <li>$.play();</li>
+	  </ul>
+};
+				</div>
+			</div>
+				
+			<div id="finished">
+				<div id="luke"></div>
+				<div id="vader"></div>
+			</div>
+
+		
+		<div id="bottom-nav">
+			<div class="button" id="prev"><a href="effects.html">Previous Step: Effects</a></div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>

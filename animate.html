@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="instructions.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jstween-1.1.min.js"></script>
+	<script src="animate.js"></script>
+	<title>Use the Force: JSTween</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>Use the Force!</h1>
+			<h3>Animation with JSTween</h3>
+		</div>
+		<div id="navigation">
+			<div class="button"><a href="howto.html">Home</a></div>
+			<div class="button"><a href="formatting.html">Step 1: Format</a></div>
+			<div class="button"><a href="js-links.html">Step 2: Set Up Libraries</a></div>
+			<div class="button"><a href="animate.html">Step 3: Animate</a></div>
+			<div class="button"><a href="sequence.html">Step 4: Sequence</a></div>
+			<div class="button"><a href="effects.html">Step 5: Effects</a></div>
+			<div class="button"><a href="aggregate.html">Step 6: The Finished Product</a></div>
+		</div>
+		<div id="main">
+			<h2>Step 3: Animate</h2>
+			<p>For each of the examples below, copy and paste the code into your webpage to test it.  You can embed it with the &lt;script&gt; tag, or you can link to a separate JavaScript file.
+			  You can choose to <a href="http://www.w3schools.com/jsref/event_onclick.asp">trigger the animation when a button is clicked</a>, or you can have it <a href="http://learn.jquery.com/using-jquery-core/document-ready/">load as soon as the document is ready</a>
+			  using jQuery.  I used the first method, which I will detail in the last step.</p>
+			<p><span class="red">Important:</span> What makes the magic happen here is the <span class="code">$.play()</span> command at the end of each example.  Without it, JSTween won't know to
+			 display the animation and nothing will happen.</p>
+			 <p>For each of these examples, we will focus on the <span class="code">start</span> and <span class="code">stop</span> attributes.  With <span class="code">start</span>, you set where
+			  you want your animation to start.  This can be a position on the screen, an opacity, a rotation, or pretty much anything depending on the type of animation called.  <span class="code">stop</span>
+			   functions the same way, except it's where you want your animation to stop.  It's important to specify <span class="code">units</span> so that JSTween knows what you're talking about.</p>
+			 <p>For now, don't worry about <span class="code">time</span>, <span class="code">duration</span>, and <span class="code">effect</span>, as they are covered in the next steps.</p>
+			  
+			<div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">Move:</h3>
+						<div class="button" onclick="move()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>left: {
+									<ul>
+									<li>start: 0,</li>
+									<li>stop: 175,</li>
+									<li>time: 0,</li>
+									<li>units: 'px',</li>
+									<li>duration: 1,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-move"></div>
+				</div>
+			</div>
+			
+			<p>Here, I am telling JSTween to move Luke from the <span class="code">left</span>, and to <span class="code">start</span> him at 0 and <span class="code">stop</span> him at 175.
+				I specify <span class="code">units: 'px'</span> so that JSTween knows to move Luke 175 pixels, as opposed to percent or degrees.</p>
+			
+			<div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">Glow:</h3>
+						<div class="button" onclick="glow()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>shadow: {
+									<ul>
+									<li>start: '0px 0px 0px #000',</li>
+									<li>stop: '10px 10px 30px #00f',</li>
+									<li>time: 0,</li>
+									<li>duration: 0.5,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-glow"></div>
+				</div>
+			</div>
+			
+			<p><span class="code">shadow</span> is short for "box-shadow" and functions the same way as the CSS3 box-shadow effect.  The first two values are the horizontal and vertical position of the shadow,
+			the third is the blur distance, and the <span class="code">#000</span> sets the color of the shadow.  Since the units are already specified, you don't need an explicit <span class="code">units</span> attribute.  
+			For a more detailed explanation of box-shadow syntax, go to <a href="http://www.w3schools.com/cssref/css3_pr_box-shadow.asp">w3schools.com</a>.</p>
+			
+			<div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">Rotate:</h3>
+						<div class="button" onclick="rotate()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>rotate: {
+									<ul>
+									<li>start: 0,</li>
+									<li>stop: 360,</li>
+									<li>units: 'degrees',</li>
+									<li>time: 0,</li>
+									<li>duration: 1,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-rotate"></div>
+				</div>
+			</div>
+			
+			<p><span class="code">rotate</span> is fairly self-explanatory: set your <span class="code">start</span> and <span class="code">stop</span> values
+			 and remember to specify your <span class="code">units</span> as 'degrees'.  To rotate the opposite direction, input a negative <span class="code">stop</span> value.</p>
+			
+			<div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">Fade:</h3>
+						<div class="button" onclick="fade()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>opacity: {
+									<ul>
+									<li>start: 100,</li>
+									<li>stop: 0,</li>
+									<li>time: 0,</li>
+									<li>duration: 1,</li>
+									<li>effect: 'easeInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-fade"></div>
+				</div>
+			</div>
+		
+		<p>In this example, <span class="code">units</span> are not technically necessary as JSTween automatically interprets them as percents, 
+		though you can include them for clarity.</p>
+		
+		<p>Test these examples on your computer and make sure you understand how they work.  Then you can move on to <a href="sequence.html">Step 4</a>.</p>
+						
+		<div id="bottom-nav">
+			<div class="button" id="prev"><a href="js-links.html">Previous Step: Set Up Libraries</a></div>
+			<div class="button" id="next"><a href="sequence.html">Next Step: Sequence</a></div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>

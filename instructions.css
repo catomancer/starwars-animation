@@ -1,0 +1,256 @@
+#wrapper {
+	padding:5px;
+	width:1000px;
+	border-radius:5px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:rgba(255,255,255,0.90);
+}
+#header {
+	width:100%;
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius:5px;
+	margin-bottom:10px;
+	background-color:rgba(0,0,0,0.75);
+	color:#FFFF00;
+}
+#header h1 {
+	font-family: 'Press Start 2P', cursive;
+	margin:0px;
+}
+#header h3 {
+	margin:0px;
+}
+#main {
+	width:100%;
+	padding-top:5px;
+	padding-bottom:5px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+	overflow:auto;
+}
+#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
+	text-align:center;
+	text-shadow: 1px 1px #ffffff;
+	padding-bottom:0px;
+	margin-bottom:0px;
+}
+#main p {
+	text-align:justify;
+}
+#navigation {
+
+}
+.button {
+	display: inline;
+	width:10em;
+	padding:5px;
+	text-align:center;
+	border:1px solid rgba(50,50,50,0.50);
+	border-radius:5px;
+	background-color:#000000;
+	color:#FFFF00;
+}
+.button a {
+	background-color:#000000;
+	color:#FFFF00;
+	text-decoration:none;
+}
+
+
+/* Step 1 */
+#format-left {
+	float:left;
+	width:48%;
+	padding:5px;
+	overflow:auto;
+	background-color:rgb(25,25,25);
+	color:#ffffff;
+	font-family: 'Inconsolata', monospace;
+	vertical-align:top;
+}
+#format-right {
+	float:right;
+	width:48%;
+	padding:0px 5px 0px 5px;
+	overflow:auto;
+	vertical-align:top;
+}
+.format h4 {
+	padding:0px;
+	margin:0px;
+}
+.format ul {
+	list-style-type:none;
+	padding:0px;
+	text-align:left;
+}
+.format ul li ul {
+	padding-left:10px;
+	margin-left:10px;
+}
+.red {
+	color:red;
+	font-weight:bold;
+}
+
+/* Step 2 */
+.code {
+	background-color:rgb(25,25,25);
+	color:#ffffff;
+	font-family: 'Inconsolata', monospace;
+}
+.code ul {
+	list-style-type:none;
+	padding:0px;
+	text-align:left;
+}
+.code ul li ul {
+	padding-left:10px;
+	margin-left:10px;
+}
+	
+/* Step 3*/
+.animate-wrapper {
+	width:99%;
+	clear:both;
+	display:block;
+	overflow:auto;
+}
+.animate-code {
+	float:left;
+	width:48%;
+	height:300px;
+	display:inline-block;
+}
+.animate-header {
+	margin:0px auto 5px auto;
+	border:1px solid rgba(50, 50, 50, 0.50);
+	background-color:#FFFF00;
+	height:2em;
+}
+h3.title {
+	float:left;
+	display:inline-block;
+	margin:5px;
+}
+.animate-header .button {
+	float:right;
+}
+.animate-code>.code {
+	clear:both;
+	border:1px solid rgba(50, 50, 50, 0.50);
+	overflow:auto;
+}
+.animate-example {
+	float:right;
+	height:300px;
+	width:48%;
+	display:inline-block;
+	background-color:#ffffff;
+	border:1px solid rgba(50, 50, 50, 0.50);
+}
+.luke {
+	width:151px;
+	height:194px;
+	float:left;
+	background-color:transparent;
+	background-image:url('luke.png');
+	display:inline-block;
+	position:relative; /* IMPORTANT!!  Browser will hold box in place otherwise */
+}
+#luke-move, #luke-fade, #luke-delay, #luke-slow, #luke-bounce, #luke-elastic {
+	margin:auto;
+}
+#luke-glow, #luke-rotate, #luke-glow-fade {
+	margin:50px auto auto 175px;
+}
+#luke-jump-spin {
+	margin:50px auto auto 0px;
+}
+
+/* Step 5 */
+#final-code {
+	float:left;
+	width:auto;
+	display:inline;
+	overflow:auto;
+}
+#final-header {
+	margin:0px auto 5px auto;
+	border:1px solid rgba(50, 50, 50, 0.50);
+	background-color:#FFFF00;
+	height:2em;
+}
+#final {
+	clear:both;
+	float:left;
+	width:300px;
+	height:500px;
+	overflow:scroll;
+}
+#finished {
+	float:right;
+	display:inline;
+	width:640px;
+	height:480px;
+	margin:5px auto auto auto;
+	background-color:#000000;
+	background-image:url('background.png');
+}
+#luke {
+	width:151px;
+	height:194px;
+	margin:175px auto auto 5px;
+	float:left;
+	background-color:transparent;
+	background-image:url('luke.png');
+	display:inline-block;
+	position:relative; /* IMPORTANT!!  Browser will hold box in place otherwise */
+}
+#vader {
+	width:222px;
+	height:239px;
+	margin:150px 5px auto auto;
+	float:right;
+	background-color:transparent;
+	background-image:url('darthvader.png');
+	display:inline-block;
+	position:relative;
+}
+
+
+#bottom-nav {
+	clear:both;
+	width:100%;
+	margin-top:10px;
+}
+#prev {
+	float:left;
+	width:auto;
+	margin:5px;
+}
+#next {
+	float:right;
+	width:auto;
+	margin:5px;
+}
+
+/* General Formatting */
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color:#000000;
+	background-image:url('yoda2.jpg');
+	background-repeat:no-repeat;
+}
+p {
+	padding: 0px 5px 0px 5px;
+}
+hr {
+	margin:5px;
+}

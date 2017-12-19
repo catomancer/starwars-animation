@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="instructions.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jstween-1.1.min.js"></script>
+	<title>Use the Force: JSTween</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>Use the Force!</h1>
+			<h3>Animation with JSTween</h3>
+		</div>
+		<div id="navigation">
+			<div class="button"><a href="howto.html">Home</a></div>
+			<div class="button"><a href="formatting.html">Step 1: Format</a></div>
+			<div class="button"><a href="js-links.html">Step 2: Set Up Libraries</a></div>
+			<div class="button"><a href="animate.html">Step 3: Animate</a></div>
+			<div class="button"><a href="sequence.html">Step 4: Sequence</a></div>
+			<div class="button"><a href="effects.html">Step 5: Effects</a></div>
+			<div class="button"><a href="aggregate.html">Step 6: The Finished Product</a></div>
+		</div>
+		<div id="main">
+			<h2>Step 2: Set Up Libraries</h2>
+			<p>The JSTween library requires jQuery, so you will need to either download jQuery or link to it.  You can download your favorite version from the <a href="http://jquery.com/download/" target="new">jQuery website</a>, or you can link to 
+			Google's hosted jQuery libraries by following the instructions at <a href="https://developers.google.com/speed/libraries/devguide#jquery" target="new">developers.google.com</a>.</p>
+			<p><span class="red">Important Note:</span> If you choose to link to a Google library, note that Google will give you a link in the following format: <span class="code">//ajax.googleapis.com/ajax/.../jquery.min.js</span>.
+				<span class="red">REMEMBER</span> to add <span class="code">http:</span> or your program won't link to the jQuery library and nothing will happen.</p>
+			<p>To animate your DIVs, you will need to download the JSTween library.  You can either <a href="http://www.jstween.org/" target="new">visit the JSTween website</a> and click "Download" on the right-hand side,
+			or you can use this <a href="http://www.jstween.org/release/jstween-1.1.zip">direct link</a>.  Unzip the JSTween files into your chosen directory.  You can use either library: jstween-x.js is the uncompressed, easy-to-read version
+			for development, and jstween-x.min.js is the compressed, impossible-to-read version for production.  Basically, if you're going to be building a library based on JSTween, use jstween-x.js, but for our purposes, jstween-x.min.js will work just fine.</p>
+			<p><span class="red">Important Note:</span> When you link to your libraries, jQuery <span class="red">MUST</span> be the first script loaded, otherwise JSTween will try to interpret your jQuery as pure JavaScript.
+			  It's not pretty and nothing will work on your page.  You will be sad.  Don't do it.</p>
+			<h4>How to link to jQuery and JSTween:</h4>
+			 <div class="code" style="margin:5px;">
+					&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt; <span class="red">/* FIRST */</span><br/>
+					&lt;script src="jstween-1.1.min.js"&gt;&lt;/script&gt;
+			 </div>
+			<p>You can test that jQuery is working properly by adding the following to your HTML file:</p>
+			<div class="code">
+				<ul>
+				<li>&lt;script type="text/javascript"&gt;
+					<ul>
+					<li>$(document).ready(function(){   
+						<ul>
+							<li>$("div").css("border", "3px solid red");</li>
+						</ul>
+					</li>
+					<li>});</li>
+					</ul>
+				</li>
+				<li>&lt;/script&gt;</li>
+				</ul>
+			</div>
+			<p>If jQuery is not working, follow the steps in this <a href="http://css-plus.com/2010/03/6-steps-to-take-if-your-jquery-is-not-working/">helpful guide</a> from CSS-Plus.com.  The above test was taken from that website.</p>
+			<p>Once you have verified that jQuery is working, delete the test script and move on to <a href="animate.html">Step 3</a>.</p>
+			
+		<div id="bottom-nav">
+			<div class="button" id="prev"><a href="formatting.html">Previous Step: Format</a></div>
+			<div class="button" id="next"><a href="animate.html">Next Step: Animate</a></div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>

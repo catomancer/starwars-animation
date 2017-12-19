@@ -1,0 +1,116 @@
+#wrapper {
+	padding:5px;
+	width:1000px;
+	border-radius:5px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:rgba(255,255,255,0.75);
+}
+#header {
+	width:100%;
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius:5px;
+	margin-bottom:10px;
+	background-color:rgba(0,0,0,0.75);
+	color:#FFFF00;
+}
+#header h1 {
+	font-family: 'Press Start 2P', cursive;
+	margin:0px;
+}
+#header h3 {
+	margin:0px;
+}
+#main {
+	width:100%;
+	padding-top:5px;
+	padding-bottom:5px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+	overflow:auto;
+}
+#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
+	text-align:center;
+	text-shadow: 1px 1px #ffffff;
+	padding-bottom:0px;
+	margin-bottom:0px;
+}
+#main p {
+	text-align:justify;
+}
+#navigation {
+
+}
+
+/* Finished Product */
+#button-wrapper {
+	margin: 10px auto 10px auto;
+	width:640px;
+}
+.button {
+	display: inline;
+	width:10em;
+	padding:5px;
+	text-align:center;
+	border:1px solid rgba(50,50,50,0.50);
+	border-radius:5px;
+	background-color:#000000;
+	color:#FFFF00;
+}
+.button a {
+	background-color:#000000;
+	color:#FFFF00;
+	text-decoration:none;
+}
+#start {
+	margin-left:35%;
+}
+#reset {
+	margin-right:35%;
+}
+#finished {
+	width:640px;
+	height:480px;
+	margin:5px auto auto auto;
+	background-color:#000000;
+	background-image:url('background.png');
+}
+#luke {
+	width:151px;
+	height:194px;
+	margin:175px auto auto 5px;
+	float:left;
+	background-color:transparent;
+	background-image:url('luke.png');
+	display:inline-block;
+	position:relative; /* IMPORTANT!!  Browser will hold box in place otherwise */
+}
+#vader {
+	width:222px;
+	height:239px;
+	margin:150px 5px auto auto;
+	float:right;
+	background-color:transparent;
+	background-image:url('darthvader.png');
+	display:inline-block;
+	position:relative;
+}
+
+/* General Formatting */
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color:#000000;
+	background-image:url('yoda2.jpg');
+	background-repeat:no-repeat;
+}
+p {
+	padding: 0px 5px 0px 5px;
+}
+hr {
+	margin:5px;
+}

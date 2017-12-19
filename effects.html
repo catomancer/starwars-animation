@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="instructions.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jstween-1.1.min.js"></script>
+	<script src="animate.js"></script>
+	<title>Use the Force: JSTween</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>Use the Force!</h1>
+			<h3>Animation with JSTween</h3>
+		</div>
+				<div id="navigation">
+			<div class="button"><a href="howto.html">Home</a></div>
+			<div class="button"><a href="formatting.html">Step 1: Format</a></div>
+			<div class="button"><a href="js-links.html">Step 2: Set Up Libraries</a></div>
+			<div class="button"><a href="animate.html">Step 3: Animate</a></div>
+			<div class="button"><a href="sequence.html">Step 4: Sequence</a></div>
+			<div class="button"><a href="effects.html">Step 5: Effects</a></div>
+			<div class="button"><a href="aggregate.html">Step 6: The Finished Product</a></div>
+		</div>
+		<div id="main">
+			<h2>Step 5: Effects</h2>
+		
+			<p>JSTween effects apply to motion tweens such as <span class="code">left</span> and <span class="code">right</span>.  They allow
+			your animation to seem smoother or rougher depending on the effect selected.  A complete list of motion effects is available at the 
+			<a href="http://www.jstween.org/#effects" target="new">JSTween website</a>.  For our purposes, we will focus on the two most noticeable
+			 motion effects: <span class="code">bounceInOut</span> and <span class="code">elasticInOut</span>.
+				
+			 <div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">BounceInOut:</h3>
+						<div class="button" onclick="bounce()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>left: {
+									<ul>
+									<li>start: 0,</li>
+									<li>stop: 175,</li>
+									<li>time: 0,</li>
+									<li>units: 'px',</li>
+									<li>duration: 1,</li>
+									<li>effect: 'bounceInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-bounce"></div>
+				</div>
+			</div>
+			
+			<p><span class="code">bounceInOut</span> means that you are adding the "bounce" effect to the beginning and the end of the motion tween.  There
+			 are separate <span class="code">bounceIn</span> and <span class="code">bounceOut</span> effects if you only want the effect applied to the beginning
+			  or the end of a motion tween.</p>
+			
+			<div class="animate-wrapper">
+				<div class="animate-code">
+					<div class="animate-header">
+						<h3 class="title">ElasticInOut:</h3>
+						<div class="button" onclick="elastic()">Test Code</div>
+					</div>
+					<div class="code">
+							<ul>
+							<li>$('#luke').tween({
+								<ul>
+								<li>left: {
+									<ul>
+									<li>start: 0,</li>
+									<li>stop: 175,</li>
+									<li>time: 0,</li>
+									<li>units: 'px',</li>
+									<li>duration: 1,</li>
+									<li>effect: 'elasticInOut'</li>
+									</ul>
+								</li>
+								<li>}</li>
+								</ul>
+							</li>
+							<li>});</li>
+							<li>$.play();</li>
+							</ul>
+					</div>
+				</div>
+				<div class="animate-example">
+					<div class="luke" id="luke-elastic"></div>
+				</div>
+			</div>
+			
+			<p><span class="code">elasticInOut</span> means that you are adding the "elastic" effect to the beginning and the end of the motion tween.  There
+			 are separate <span class="code">elasticIn</span> and <span class="code">elasticOut</span> effects if you only want the effect applied to the beginning
+			  or the end of a motion tween.</p>
+			   
+			   <p>If you have a good grasp of effects, move on to <a href="aggregate.html">Step 6</a>.</p>
+			
+		<div id="bottom-nav">
+			<div class="button" id="prev"><a href="sequence.html">Previous Step: Sequence</a></div>
+			<div class="button" id="next"><a href="aggregate.html">Next Step: The Finished Product</a></div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>

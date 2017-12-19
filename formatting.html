@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="instructions.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jstween-1.1.min.js"></script>
+	<title>Use the Force: JSTween</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>Use the Force!</h1>
+			<h3>Animation with JSTween</h3>
+		</div>
+		<div id="navigation">
+			<div class="button"><a href="howto.html">Home</a></div>
+			<div class="button"><a href="formatting.html">Step 1: Format</a></div>
+			<div class="button"><a href="js-links.html">Step 2: Set Up Libraries</a></div>
+			<div class="button"><a href="animate.html">Step 3: Animate</a></div>
+			<div class="button"><a href="sequence.html">Step 4: Sequence</a></div>
+			<div class="button"><a href="effects.html">Step 5: Effects</a></div>
+			<div class="button"><a href="aggregate.html">Step 6: The Finished Product</a></div>
+		</div>
+		<div id="main">
+			<h2>Step 1: Format</h2>
+			<p>The most important part of creating the Force Battle animation is getting the elements
+			set up correctly.  Luke and Vader are each individual DIVs with a background image.  The 
+			Emperor's command room is set as the background image of the animation container DIV.</p>
+			<div class="format" id="format-left">
+				<h4>HTML:</h4>
+				<hr>
+					<ul>
+						<li>&lt;div id="finished"&gt;
+							<ul>
+								<li>&lt;div id="luke"&gt;&lt;/div&gt;</li>
+								<li>&lt;div id="vader"&gt;&lt;/div&gt;</li>
+							</ul>
+						</li>
+						<li>&lt;/div&gt;</li>
+					</ul>
+				<hr>
+				<h4>CSS:</h4>
+				<hr>
+				<ul>
+					<li>#finished {
+						<ul>
+						<li>width:640px;</li>
+						<li>height:480px;</li>
+						<li>margin:5px auto auto auto;</li>
+						<li>background-color:#000000;</li>
+						<li>background-image:url('background.png');</li>
+						</ul>
+					}</li>
+					<li>#luke {
+						<ul>
+						<li>width:151px;</li>
+						<li>height:194px;</li>
+						<li>margin:175px auto auto 5px;</li>
+						<li>float:left;</li>
+						<li>background-color:transparent;</li>
+						<li>background-image:url('luke.png');</li>
+						<li>display:inline-block;</li>
+						<li>position:relative; <span class="red">/* IMPORTANT!!  Browser will hold DIV in place otherwise */</span></li>
+						</ul>
+					}</li>
+					<li>#vader {
+						<ul>
+						<li>width:222px;</li>
+						<li>height:239px;</li>
+						<li>margin:150px 5px auto auto;</li>
+						<li>float:right;</li>
+						<li>background-color:transparent;</li>
+						<li>background-image:url('darthvader.png');</li>
+						<li>display:inline-block;</li>
+						<li>position:relative; <span class="red">/* IMPORTANT!!  Browser will hold DIV in place otherwise */</span></li>
+						</ul>
+					}</li>
+					<hr>
+			</div>
+			<div id="format-right">
+			<p>The HTML is very simple: a container DIV called "finished", and character DIVs for Luke and Vader.  The CSS determines 
+			how well they line up with each other and the chosen background image.</p>
+			<p>It is better to use PNG images for your DIVs because they can have a transparent background.  JPEG images interpret
+			 a transparent background as white, which would leave a big white box around each of your characters.</p>
+			<p>For the Luke and Vader DIVs, <span class="red">REMEMBER</span> to set their positions to
+			 "relative".  If you don't, none of the JSTween animations will work because the browser
+			 will hold the DIVs in place.  You will tear your hair out trying to figure out the problem
+			  and you will be sad.  Don't do it.</p>
+			 <p>At this point, you should have a nice 640x480 box on your screen with your chosen background image, and Luke and Vader
+			  should be aligned so that they are facing each other on opposite sides of the box.</p>
+			  <p>If everything is displaying properly, you should move on to <a href="js-links.html">Step 2</a>.</p>
+			</div>
+			<div id="bottom-nav">
+				<div class="button" id="next"><a href="js-links.html">Next Step: Set Up Libraries</a></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
